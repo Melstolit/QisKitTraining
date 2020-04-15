@@ -5,7 +5,9 @@ import numpy as np
 
 circ = QuantumCircuit(4)
 circ.h(0)
+circ.h(0)
 circ.h(1)
+circ.h(2)
 circ.h(2)
 circ.h(3)
 circ.x(3)
