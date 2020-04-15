@@ -1,13 +1,8 @@
-#from IPython import get_ipython
-#get_ipython().run_line_magic('matplotlib', 'inline')
 # Importing standard Qiskit libraries and configuring account
 from qiskit import QuantumCircuit, execute, Aer #, IBMQ
 from qiskit.compiler import transpile, assemble
-#from qiskit.tools.jupyter import *
-from qiskit.visualization import *
 import numpy as np
-# Loading your IBM Q account(s)
-# provider = IBMQ.load_account()
+
 circ = QuantumCircuit(4)
 circ.h(0)
 circ.h(1)
@@ -22,7 +17,7 @@ circ.h(0)
 circ.h(1)
 circ.h(2)
 circ.h(3)
-circ.draw()
+# circ.draw()
 
 backend = Aer.get_backend('statevector_simulator')
 job = execute(circ, backend)
@@ -35,7 +30,7 @@ meas = QuantumCircuit(4, 4)
 meas.barrier(range(4))
 meas.measure(range(4),range(4))
 qc = circ+meas
-qc.draw()
+# qc.draw()
 print(qc)
 
 backend_sim = Aer.get_backend('qasm_simulator')
